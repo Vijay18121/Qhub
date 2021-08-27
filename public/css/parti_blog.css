@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f8ff;
+ 
+}
+
+
+
+.btn.btn-success{
+  padding: .4em 2em;
+}
+.myDiv { 
+  
+  margin-left: 180px;
+  width: 60em;
+
+}
+
+.Replies{
+  margin-left: 15%; 
+}
+
+.ansDiv{
+  
+  margin-left: 250px;
+  width: 55em;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+/* For mobile phones: */
+body{
+  font-size:small ;
+}
+
+.btn.btn-success{
+  padding: .2em 1em;
+  font-size:x-small ;
+  width: fit-content;
+}
+.myDiv { 
+  
+  margin-left:10%;
+  width: 80%;
+  
+}
+.Replies{
+  margin-left: 10%; 
+}
+.ansDiv{
+  
+  margin-left: 20%;
+  width: 70%;
+
+}
+
+
+
+
+}

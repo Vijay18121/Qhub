@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f8ff;
+   
+}
+
+.center-div{
+    padding-top: 7.5%;
+}
+
+.btn.btn-success{
+    padding: .4em 2em;
+}
+.myDiv { 
+    border-radius:20px;
+  
+ }
+
+
+ .myDivdown{ max-height: 60px ;  }
+form{
+    padding: 0 3em;
+}
+
+#login .title > span{
+    font-size: .8em;
+}
+
+@media only screen and (max-width: 900px) {
+  /* For mobile phones: */
+  body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f8ff;
+   
+}
+
+.center-div{
+    padding-top: 5%;
+    margin: auto;
+   
+}
+
+.btn.btn-success{
+    padding: .2em 1em;
+}
+.myDiv { 
+    border-radius:10px;
+    margin-top: 10%;
+    width: 10px;
+    min-width: 70%;
+    max-width: 60%;
+   
+ }
+
+
+ .myDivdown{ max-height: 60px ;  }
+form{
+    padding: 0 1em;
+}
+
+#login .title > span{
+    font-size: .4em;
+}
+}

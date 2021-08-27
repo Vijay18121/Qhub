@@ -1,0 +1,45 @@
+<%- include("./partials/header") %>
+<%- include("./partials/navbar") %>
+
+
+
+<link rel="Stylesheet" href="/css/Index.css">
+
+
+
+<div class="container mt-5 py-5"  >
+    <h3> <img src="/images/post.png" height="40px" width="40px">Recent Posts  </h3><span style="padding-right: 7px;"></span><!--😇-->
+    <br>
+
+
+    <% blogs.reverse() %> 
+
+    <% blogs.forEach(blog => { %>
+    <div class="card mt-3">
+        <div class="card-body" >
+           <div> <p><span style="float: left; padding-right: 7px;"> <img src="/images/user.png" height="25px" width="25px"></span> <bold><%= blog.creator %> <span style="color:gray;float: right; ">Posted: <%= blog.postedAt.toString().slice(0,15) %> at <%= blog.postedAt.toString().slice(15,24) %> </span></p>
+           </div>
+            <h5 class="card-title" style="margin-top: 20px; "><%= blog.title %> </h5>
+            <p class="card-text"  style="margin-bottom: 20px;"><%= blog.content.slice(0, 99) %> .... <a href="/blog/<%= blog._id %>">Read More</a></p>
+            <p  style="margin-left: 12px;">  
+            <%if (token) { %>
+            <a href=" /delete/<%= blog._id %>" id="B1"><img  title="Delete" src="images/del.png" height="26px" width="26px"></a>
+            &nbsp; &nbsp;&nbsp;
+            <a href=" /edit/<%= blog._id %>"  id="B2"><img  title="Edit" src="images/edit.png" height="21px" width="21px"></a>
+            <% } %>
+            &nbsp; &nbsp;&nbsp;
+            <% if (token) { %>
+            <a href=" /reply/<%= blog._id %>"><img  title="Answer" src="images/chat.png" height="24px" width="24px"></a>
+            <% } %><br>
+          </p>
+          
+        </div>
+    </div>
+    <br>
+    <%}) %>
+ 
+
+</div>
+
+
+<%- include("./partials/footer") %>

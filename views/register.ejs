@@ -1,0 +1,130 @@
+<%- include("./partials/header") %>
+<%- include("./partials/navbarDup") %>
+
+<link rel="Stylesheet" href="/css/register.css">
+
+<div class="row mt-5">
+  <div class="col-md-4 m-auto ">
+  
+    <div class="myDiv container w-35 border py-4 shadow p-3 mb-5 rounded-3"style=" background-color: #292b2c; color: white; ">
+      <h1 class="text-center mb-3">
+        <i class="fas fa-user-plus"></i> Register
+      </h1>
+     
+      <form name="RegForm" action="/register" onsubmit="return validate()" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            id="Username"
+            name="Username"
+            class="form-control"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        
+     <!--   <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="Email"
+            name="Email"
+            class="form-control"
+            placeholder="Email Id"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+   -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="Password"
+            name="Password"
+            class="form-control"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            name="password2"
+            class="form-control"
+            placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+          />
+        </div>
+       
+        <label class="pass">Password requirements</label>
+       <ul class="pass"> 
+            <li>Must be a minimum of 6 characters.</li>
+           <li>Must contain letters, numbers, and symbols.</li>
+            <li> Passwords must match.</li>
+      </ul>       
+ <button type="submit" class="btn btn-success btn-block">
+          Register
+        </button> 
+        <p class="lead mt-4">Have An Account?  &nbsp;<a style="color: #007cc7;" href="/login">Login</a></p>
+      </form>
+     
+    </div>
+  </div>
+</div>
+
+<script>
+	function validate() {
+		var name = document.forms["RegForm"]["Username"];
+		var email = document.forms["RegForm"]["Email"];
+		var password = document.forms["RegForm"]["Password"];
+		var password2 = document.forms["RegForm"]["password2"];
+
+		if (name.value == "") {
+			window.alert("Please enter your name.");
+			name.focus();
+			return false;
+		}
+/*
+		if (email.value == "") {
+			window.alert(
+			"Please enter a valid e-mail address.");
+			email.focus();
+			return false;
+		}
+	
+*/
+		if (password.value == "") {
+			window.alert("Please enter your password");
+			password.focus();
+			return false;
+		}
+
+    var paswd=  /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,15}$/;
+    if(!password.value.match(paswd)){
+      alert('Password Should have \n         • At least one upper case English letter \n         • At least one lower case English letter \n         • At least one digit \n         • At least one special character \n         • Minimum six in length ');
+      window.location.href = "/register";
+      return false;
+    }
+
+    if (password2.value == "") {
+			window.alert("Please enter your password");
+			password.focus();
+			return false;
+		}
+
+    if (password.value != password2.value ) {
+			window.alert("Passwords are different");
+			password.focus();
+			return false;
+		}
+
+
+		return true;
+	}
+</script>
+
+
+<%- include("./partials/footer") %>

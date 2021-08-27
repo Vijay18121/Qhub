@@ -1,0 +1,34 @@
+<%- include("./partials/header") %>
+<%- include("./partials/navbarDup") %>
+
+
+<link rel="Stylesheet" href="/css/login.css">
+
+
+<div class="text-center center-div"  id="login">
+      
+    <div class="myDiv container w-25 border py-4 shadow p-3 mb-5 rounded-3"style=" background-color: #292b2c; color: white ">
+        <div class="title pb-5">
+            <h2 class="font-weight-bold">Login </h2>
+            <span>Log in for the existing user</span>
+            
+        </div>
+        <form action="/login" method="POST" class="pt-3">
+            <div class="form-group">
+                <input type="name" class="form-control" placeholder="Username" name="Username">
+                <small class="form-text text-muted text-left">Enter Registered Username</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <small class="form-text text-muted text-left">Enter Password</small>
+            </div>
+           
+            <button type="submit" class="btn btn-success rounded-pill">Login</button>
+        </form>
+        <p class="lead mt-4">
+            No Account? <a style="color: #007cc7;" href="/register">Register</a>
+          </p>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
