@@ -12,7 +12,7 @@ module.exports = async function(req,res,next){
        if(valid){//
           next();
        }
-       else {res.write("<script>alert('Invalid Username/Password'); window.location.href = '/login'; </script>");}
+       else {res.write("<script>alert('Kindly login!'); window.location.href = '/login'; </script>");}
     }
-    catch(error){ res.write("<script>alert('Invalid Username/Password'); window.location.href = '/login'; </script>");}
+    catch(error){ res.write("<script>alert('Kindly login!'); window.location.href = '/login'; </script>");}
 };
