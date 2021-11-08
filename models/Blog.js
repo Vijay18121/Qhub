@@ -50,7 +50,6 @@ const User = new mongoose.model("User", UserSchema);
 const Blog = new mongoose.model("Blog", BlogSchema);
 
 
-
 module.exports = {
    Blog, User 
 };
