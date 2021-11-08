@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 const {tokenValidator} =require("./token");
 
-
 module.exports = async function(req,res,next){
 
     try{
